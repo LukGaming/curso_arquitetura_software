@@ -15,5 +15,11 @@ final class Error<T> extends Result<T> {
   final Exception error;
 }
 
+extension ResultCasting<T> on Result<T> {
+  Ok<T> get asValue => this as Ok<T>;
+
+  Error<T> get asError => this as Error<T>;
+}
+
 
 // Ok("String")
